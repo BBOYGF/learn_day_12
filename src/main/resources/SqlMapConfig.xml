@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 和spring整合后 environments配置将废除-->
+    <environments default="development">
+        <environment id="development">
+            <!-- 使用jdbc事务管理，事务控制由mybatis-->
+            <transactionManager type="JDBC" />
+            <!-- 数据库连接池,由mybatis管理-->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+                <property name="url" value="jdbc:sqlserver://qds168257330.my3w.com;databaseName=qds168257330_db;" />
+                <property name="username" value="qds168257330" />
+                <property name="password" value="guofan6889168" />
+            </dataSource>
+        </environment>
+    </environments>
+    <!-- 加载映射文件-->
+    <mappers>
+        <mapper resource="com/learn/dao/UserMapper.xml"/>
+    </mappers>
+</configuration>
